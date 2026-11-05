@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsga7vtnfcdr7"]
+
+[ext_resource type="Script" path="res://tri.gd" id="1_ttf8t"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ttf8t")
+
+[node name="Container" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="a" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 0
+
+[node name="b" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 1
+
+[node name="c" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 2
+
+[node name="d" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 3
+
+[node name="e" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 4
+
+[node name="f" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 5
+
+[node name="g" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 6
+
+[node name="h" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 7
+
+[node name="i" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "x"
+metadata/moj_id = 8
