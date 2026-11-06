@@ -1,15 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://bsga7vtnfcdr7"]
 
-[ext_resource type="Script" path="res://tri.gd" id="1_ttf8t"]
+[ext_resource type="Script" path="res://tri.gd" id="1_j6ulp"]
 
-[node name="Node2D" type="Control"]
+[node name="Igra" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ttf8t")
+script = ExtResource("1_j6ulp")
 
 [node name="Container" type="GridContainer" parent="."]
 layout_mode = 1
@@ -91,3 +91,44 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 8
+
+[node name="ControlKonec" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ControlKonec"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="CenterContainer" type="CenterContainer" parent="ControlKonec"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="VBoxContainer" parent="ControlKonec/CenterContainer"]
+layout_mode = 2
+
+[node name="LabelKonec" type="Label" parent="ControlKonec/CenterContainer/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Zmaga"
+
+[node name="ButtonPonovi" type="Button" parent="ControlKonec/CenterContainer/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Ponovi"
+
+[connection signal="pressed" from="ControlKonec/CenterContainer/BoxContainer/ButtonPonovi" to="." method="_on_button_ponovi_pressed"]
