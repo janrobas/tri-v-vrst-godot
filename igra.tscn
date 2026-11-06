@@ -11,16 +11,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j6ulp")
 
-[node name="Container" type="GridContainer" parent="."]
+[node name="Vbox" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Container" type="GridContainer" parent="Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
 columns = 3
 
-[node name="a" type="Button" parent="Container"]
+[node name="a" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -28,7 +32,7 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 0
 
-[node name="b" type="Button" parent="Container"]
+[node name="b" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -36,7 +40,7 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 1
 
-[node name="c" type="Button" parent="Container"]
+[node name="c" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -44,7 +48,7 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 2
 
-[node name="d" type="Button" parent="Container"]
+[node name="d" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -52,7 +56,7 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 3
 
-[node name="e" type="Button" parent="Container"]
+[node name="e" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -60,7 +64,7 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 4
 
-[node name="f" type="Button" parent="Container"]
+[node name="f" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -68,7 +72,7 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 5
 
-[node name="g" type="Button" parent="Container"]
+[node name="g" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -76,7 +80,7 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 6
 
-[node name="h" type="Button" parent="Container"]
+[node name="h" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -84,13 +88,35 @@ theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 7
 
-[node name="i" type="Button" parent="Container"]
+[node name="i" type="Button" parent="Vbox/Container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 120
 text = "x"
 metadata/moj_id = 8
+
+[node name="Margin" type="MarginContainer" parent="Vbox"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Vbox/Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Vbox/Margin/HFlowContainer"]
+layout_mode = 2
+text = "Težavnost:"
+
+[node name="Tezavnost" type="HSlider" parent="Vbox/Margin/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 4.0
+value = 4.0
+rounded = true
 
 [node name="ControlKonec" type="Control" parent="."]
 visible = false
@@ -131,4 +157,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Ponovi"
 
+[connection signal="value_changed" from="Vbox/Margin/HFlowContainer/Tezavnost" to="." method="_on_tezavnost_value_changed"]
 [connection signal="pressed" from="ControlKonec/CenterContainer/BoxContainer/ButtonPonovi" to="." method="_on_button_ponovi_pressed"]
